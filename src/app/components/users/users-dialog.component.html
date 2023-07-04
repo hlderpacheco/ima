@@ -1,0 +1,12 @@
+
+
+
+
+<h1 mat-dialog-title>
+  <span class="brand">Imx <span class="set-primary-color">Marks</span>manship</span>
+</h1>
+<div mat-dialog-content class="dialog-user-email">{{alertMsg}}</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true" (click)="onComfirmation(alertMsg)" class="comfirmation-btn">Yes</button>
+  <button mat-button mat-dialog-close (click)="onCancel()"  class="cancel-btn">No</button>
+</div>

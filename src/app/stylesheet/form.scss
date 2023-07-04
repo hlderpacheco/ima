@@ -1,0 +1,76 @@
+.mdc-text-field .mdc-text-field__input{ caret-color: #ff4d00 !important; }
+.mat-mdc-select-arrow svg { fill: #ff4d00 !important; }
+
+
+
+
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    justify-content: center;
+
+    .form-card{
+        margin: auto 0;
+        max-width: 800px;
+        border-radius: 16px;
+        background-color: #fff;
+        box-shadow: 0 0 128px 0 rgba(0,0,0, 0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .profile-img{
+            width: 8rem;
+            height: 8rem;
+        }
+
+        .cam-icon{
+            position: absolute;
+            color: #ff4d00;
+            cursor: pointer;
+            font-size: 40px;
+            right: 1rem;
+            top: 6rem;
+        }
+        
+        .col-container{
+            display: flex;
+            flex-direction: row;
+            .mat-mdc-card-content:first-child {
+                padding-top: 0 !important;
+            }
+            .col-1,.col-2{
+                .extend-width{
+                    width: 100%;
+                    .mdc-floating-label,input,.form-icon{
+                        color: #ff4d00;
+                        &.form-icon{
+                            font-size: 25px;
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+                .mdc-text-field--filled{
+                    background-color: #f7f7f7 !important;
+                }
+            }
+        }
+
+        .action-container{
+            width: 100%;
+            .action-btn{
+                background-color: #ff4d00;
+                margin: 1rem 6rem;
+                color: #f7f7f7;
+                width: 100%;
+                &:hover{
+                    background-color: #FDA172;
+                }
+            }
+        }
+    }
+}

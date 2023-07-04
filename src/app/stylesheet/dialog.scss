@@ -1,0 +1,18 @@
+.brand{
+    font-weight:800;
+
+    .set-primary-color{
+        color: #ff4d00;
+    }
+}
+
+.comfirmation-btn{
+    background-color: #ff4d00;
+    color:#ffffff;
+}
+
+.cancel-btn{
+    &:active{
+        background-color: #d3d3d3;
+    }
+}

@@ -1,0 +1,18 @@
+.mat-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:800;
+    box-shadow: 0px 0.3px 5px rgba(0, 0, 0, 0.546);
+
+    .set-primary-color{
+        color: #ff4d00;
+    }
+
+    .add-user-btn{
+        background-color: #ff4d00;;
+        .add-user-icon{
+            color: #ffffff;
+        }
+    }
+}

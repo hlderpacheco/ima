@@ -1,0 +1,89 @@
+<mat-drawer-container class="mat-drawer-container" autosize>
+    <mat-drawer #drawer class="side-navbar" mode="side">
+        <app-side-navbar></app-side-navbar>
+    </mat-drawer>
+    <div class="main">
+        <app-tool-bar></app-tool-bar>
+
+        <!-- search-bar -->
+        <mat-form-field class="search-bar-container">
+          <mat-icon class="search-icon" matPrefix>search</mat-icon>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search for user..." #input>
+        </mat-form-field>
+
+        <div class="table-container">
+            <div class="table-content">
+                <!-- table -->
+                <table mat-table [dataSource]="dataSource" class="table">
+
+                    <!-- Trainee Name -->
+                    <ng-container matColumnDef="traineeName">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Trainee Name </th>
+                      <td mat-cell *matCellDef="let element"> {{element.trainee_name}} </td>
+                    </ng-container>
+
+                    <!-- Exercise Name -->
+                    <ng-container matColumnDef="exerciseName">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Exercise Name </th>
+                      <td mat-cell *matCellDef="let element"> {{element.exercise_name}} </td>
+                    </ng-container>
+
+                    <!-- Instructor -->
+                    <ng-container matColumnDef="instructor">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Instructor </th>
+                      <td mat-cell *matCellDef="let element"> {{element.instructor}} </td>
+                    </ng-container>
+
+                    <!-- Date -->
+                    <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+
+                    <!-- Number Of Civilians Hit -->
+                    <ng-container matColumnDef="numberOfCiviliansHit">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Civilians Hit </th>
+                      <td mat-cell *matCellDef="let element"> {{element.number_of_civilians_hit}} </td>
+                    </ng-container>
+
+                    <!-- Number Of Enemy Hit -->
+                    <ng-container matColumnDef="numberOfEnemyHit">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Enemy Hit </th>
+                      <td mat-cell *matCellDef="let element"> {{element.number_of_enemy_hit}} </td>
+                    </ng-container>
+
+                    <!-- Precision Percentage -->
+                    <ng-container matColumnDef="precisionPercentage">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Precision Percentage </th>
+                      <td mat-cell *matCellDef="let element"> {{element.precision_percentage}} </td>
+                    </ng-container>
+
+                    <!-- Number Of Rounds Used -->
+                    <ng-container matColumnDef="numberOfRoundsUsed">
+                      <th mat-header-cell *matHeaderCellDef class="header-heading"> Rounds Used </th>
+                      <td mat-cell *matCellDef="let element"> {{element.number_of_rounds_used}} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <!-- progress spinner -->
+                <div *ngIf="isLoading" class="spinner-container">
+                  <mat-progress-spinner 
+                    class="spinner" 
+                    mode="indeterminate">
+                  </mat-progress-spinner>
+                </div>
+                <!-- paginator -->
+                <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            </div>
+        </div>
+      
+        <div class="floating-action" matTooltip="Menu">
+            <button mat-fab class="menu-btn" aria-label="menu-icon-button" type="button" (click)="drawer.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+
+    </div>
+</mat-drawer-container>
